@@ -1,6 +1,7 @@
-import { levelSelector, rootReducer } from './rootReducer'
+import { levelSelector, rootReducer, timeStepsSelector } from './rootReducer'
 
 export {
   levelSelector,
   rootReducer,
+  timeStepsSelector,
 }
