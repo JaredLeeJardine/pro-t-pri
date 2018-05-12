@@ -5,4 +5,5 @@ export const builder = {
   speed: 1,
   attack_rate: 1,
   range: 1,
+  cost: 25,
 };

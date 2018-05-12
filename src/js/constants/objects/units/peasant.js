@@ -5,4 +5,5 @@ export const peasant = {
   speed: 1,
   attack_rate: 1,
   range: 1,
+  cost: 20,
 };
