@@ -1,4 +1,4 @@
-xport const Orc = {
+export const Orc = {
   health: 12,
   attack_power: 5,
   armour: 1,
