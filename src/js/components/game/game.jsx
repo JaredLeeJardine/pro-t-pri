@@ -1,7 +1,9 @@
 import React, { Component }  from 'react'
+import { UnitTypes }         from '../../constants/enums/unitTypes'
 import { generateLandscape } from '../../util/generateLandscape'
 import GameSpace             from '../gameSpace/gameSpace'
 import { TerrainTypes }      from '../../constants/enums/terrainTypes'
+import Unit                  from '../unit/unit'
 class Game extends Component {
   constructor(props) {
     super(props)
@@ -30,29 +32,34 @@ class Game extends Component {
       width: this.state.width
     }
     return (
-      <div className="game" style={style}>
-        {
-          this.state.board.map((row, index) => {
-            return (
-              <div
-                className={'game-row'}
-                key={`game-row-${index}`}
-              >
-                {
-                  row.map((square, rIndex) => {
-                    return (
-                      <GameSpace
-                        key={`game-space-${index}-${rIndex}`}
-                        terrain={square}
-                      />
-                    )
-                  })
-                }
-              </div>
-             );
-          })
-        }
-      </div>
+        <div className="game" style={style}>
+          {
+            this.state.board.map((row, index) => {
+              return (
+                <div
+                  className={'game-row'}
+                  key={`game-row-${index}`}
+                >
+                  {
+                    row.map((square, rIndex) => {
+                      return (
+                        <GameSpace
+                          key={`game-space-${index}-${rIndex}`}
+                          terrain={square}
+                        >
+                          {index !== 2 || rIndex !== 5 ? null :
+                            (
+                              <Unit unitType={UnitTypes.PEASANT}/>
+                            )}
+                        </GameSpace>
+                      )
+                    })
+                  }
+                </div>
+               );
+            })
+          }
+        </div>
     );
   }
 

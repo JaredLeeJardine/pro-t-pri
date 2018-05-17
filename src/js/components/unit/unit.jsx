@@ -1,19 +1,19 @@
 import React, { Component }  from 'react'
 import { NON_BREAKING_SPACE } from '../../constants/strings'
 
-class GameSpace extends Component {
+class Unit extends Component {
   render() {
     const {
-      terrain,
+      unitType,
     } = this.props;
     return (
       <div
-        className={`game-space ${terrain}`}
+        className={`game-unit ${unitType}`}
       >
-        {this.props.children ? this.props.children : NON_BREAKING_SPACE}
+        {NON_BREAKING_SPACE}
       </div>
     );
   }
 }
 
-export default GameSpace;
+export default Unit;
